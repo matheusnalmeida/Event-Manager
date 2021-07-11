@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>junior_analyst</RootNamespace>
+    <UserSecretsId>12ad98ed-a951-4e46-8c3b-9f16ac44bc53</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JuniorAnalyst.Domain\JuniorAnalyst.Domain.csproj" />
+    <ProjectReference Include="..\JuniorAnalyst.Repository\JuniorAnalyst.Repository.csproj" />
+    <ProjectReference Include="..\JuniorAnalyst.Service\JuniorAnalyst.Service.csproj" />
+  </ItemGroup>
+
+</Project>

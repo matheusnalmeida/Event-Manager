@@ -1,0 +1,41 @@
+version: '3'
+services:
+    db:
+        image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+        environment: 
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "dfkr2F7BV9"
+            MSSQL_PID: Express
+        ports: 
+            - "1433:1433"
+    junioranalystapplication:
+        image: junioranalystapplication
+        build:
+            context: .
+            dockerfile: backend/junior-analyst/Dockerfile
+        ports:
+            - "5000:5000"
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ConnectionStrings:DBServer=db
+            - ConnectionStrings:DBPassword=dfkr2F7BV9
+        volumes:
+            - ~/.vsdbg:/remote_debugger:rw
+        depends_on: 
+            - "db"
+        restart: on-failure:10              
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        volumes:
+            - './frontend:/app'
+            - '/app/node_modules'
+        ports:
+            - 3001:3000
+        environment:
+            - REACT_APP_API=http://localhost:5000/api
+        depends_on: 
+            - junioranalystapplication
+        restart: on-failure:10  
+            

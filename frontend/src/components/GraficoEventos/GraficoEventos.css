@@ -1,0 +1,12 @@
+.main-charts {
+    margin-top: 2rem;
+	margin-left: 7rem;
+    margin-right: 7rem;
+    margin-bottom: 2rem;
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}

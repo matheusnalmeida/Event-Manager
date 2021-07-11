@@ -1,0 +1,29 @@
+.main-home {
+	margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.h1-header-intru-home {
+	font-size: 1.5rem;
+}
+
+.info-div-home,
+.instru-div-home {
+	width: inherit;
+	padding-right: 2rem;
+}
+
+.h1-header-home {
+	padding-top: 15px;
+}
+
+.p-home {
+	margin-top: 2rem;
+	margin-left: 2rem;
+	line-height: 1.5rem;
+	text-align: justify;
+}
+
+.instru-div-home {
+	padding-top: 1.9rem;
+}
